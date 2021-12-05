@@ -9,4 +9,5 @@ import scrapy
 class ExamplaImageItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    print("hello world")
     pass
