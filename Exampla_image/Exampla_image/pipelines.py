@@ -24,7 +24,7 @@ class ExamplaImagePipeline:
                         title text,
                         price integer,
                         image_urls text,
-                        discount
+                        discount varchar
                         )""")
 
     def process_item(self, item, spider):
@@ -35,7 +35,7 @@ class ExamplaImagePipeline:
         self.curr.execute("""insert into mobile_tb values (?,?,?,?)""",(
                     item['title'],
                     item['price'],
-                    item['image_urls'],
+                    item['image_urls'][0],
                     item['discount']
                     ))
         self.conn.commit()
